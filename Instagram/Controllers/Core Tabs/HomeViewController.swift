@@ -17,9 +17,11 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+       
+        
         //未確認の場合の処理を実行
         handleNotAuthenticated()
-     
+       
         
     }
      

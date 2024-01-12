@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-
+    
     public var width: CGFloat {
         return frame.size.width
     }
@@ -29,5 +29,13 @@ extension UIView {
     public var right: CGFloat {
         return frame.origin.x + frame.size.width
     }
-    
 }
+    
+    extension String {
+        func safeDatabaseKey() -> String {
+           
+            return self.replacingOccurrences(of: ".", with: "_").replacingOccurrences(of: "@", with: "_")
+        }
+    }
+    
+

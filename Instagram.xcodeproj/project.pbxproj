@@ -41,6 +41,7 @@
 		B5ADE2352B4B8B960029838E /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADE2342B4B8B960029838E /* PostEditorViewController.swift */; };
 		B5ADE2372B4B8BC40029838E /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADE2362B4B8BC40029838E /* PublishPostViewController.swift */; };
 		B5B8E2792B4CEB9900789E64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5B8E2782B4CEB9900789E64 /* GoogleService-Info.plist */; };
+		B5F8B7AF2B56ADFA0000621B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8B7AE2B56ADFA0000621B /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		B5ADE2342B4B8B960029838E /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		B5ADE2362B4B8BC40029838E /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		B5B8E2782B4CEB9900789E64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5F8B7AE2B56ADFA0000621B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F63520A6B20CFD2FD2E05CAC /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE61B83A9AAD8CAC2D2C3751 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +204,7 @@
 		B5ADE2162B4B840D0029838E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5F8B7AE2B56ADFA0000621B /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				B574F0ED2B5219D200FD281A /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				B5ADE2352B4B8B960029838E /* PostEditorViewController.swift in Sources */,
 				B574F0E32B4D15B300FD281A /* StorageManager.swift in Sources */,
+				B5F8B7AF2B56ADFA0000621B /* Models.swift in Sources */,
 				B574F0F32B54CFDB00FD281A /* FormTableViewCell.swift in Sources */,
 				B5ADE2292B4B8A140029838E /* PostViewController.swift in Sources */,
 				B574F0FA2B54FF6600FD281A /* ProfileTabsCollectionReusableView.swift in Sources */,

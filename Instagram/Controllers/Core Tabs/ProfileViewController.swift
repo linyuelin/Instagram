@@ -108,6 +108,7 @@ extension ProfileViewController: UICollectionViewDelegate,UICollectionViewDataSo
             
             let tabControlHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as! ProfileTabsCollectionReusableView
             
+            tabControlHeader.delegate = self
             return tabControlHeader
         }
         
@@ -141,7 +142,12 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     func profileHeaderDidTapFollowersButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+         var mockData = [UserRelationship]()
+         for x in 0..<10 {
+             mockData.append(UserRelationship(username: "@joe", name: "joe Smith", type: x % 2 == 0 ? .following : .not_following))
+        }
+        
+        let vc = ListViewController(data: mockData)
         vc.title = "フォロワー"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
@@ -149,7 +155,11 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     
     
     func profileHeaderDidTapFollowingButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        var mockData = [UserRelationship]()
+        for x in 0..<10 {
+            mockData.append(UserRelationship(username: "@joe", name: "joe Smith", type: x % 2 == 0 ? .following : .not_following))
+        }
+        let vc = ListViewController(data:mockData)
         vc.title = "フォロー中"
         vc.navigationItem.largeTitleDisplayMode = .never  //タイトルの大きさ
         navigationController?.pushViewController(vc, animated: true)
@@ -160,7 +170,16 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
         vc.title = "プロフィールを編集"
         present(UINavigationController(rootViewController: vc), animated: true)
     }
+}
+
+extension ProfileViewController: ProfileTabsCollectionReusableViewDelegate {
+    func didTapGridButtonTab() {
+        
+    }
     
+    func didTapTaggedButtonTab() {
+     
+    }
     
     
 }

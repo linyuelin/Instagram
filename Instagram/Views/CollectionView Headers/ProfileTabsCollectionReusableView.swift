@@ -21,7 +21,7 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
     public weak var delegate:  ProfileTabsCollectionReusableViewDelegate?
     
     struct Constants {
-        static let padding: CGFloat = 4
+        static let padding: CGFloat = 8
     }
     
     private let gridButton: UIButton = {
@@ -54,10 +54,14 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
     }
     
    @objc private func didTapGridButton(){
+       gridButton.tintColor = .systemBlue
+       taggedButton.tintColor = .lightGray
        delegate?.didTapGridButtonTab()
     }
     
     @objc private func didTapTaggedButton(){
+        gridButton.tintColor =  .lightGray
+        taggedButton.tintColor = .systemBlue 
         delegate?.didTapTaggedButtonTab()
      }
     

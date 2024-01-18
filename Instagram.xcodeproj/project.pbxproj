@@ -41,6 +41,10 @@
 		B5ADE2352B4B8B960029838E /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADE2342B4B8B960029838E /* PostEditorViewController.swift */; };
 		B5ADE2372B4B8BC40029838E /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADE2362B4B8BC40029838E /* PublishPostViewController.swift */; };
 		B5B8E2792B4CEB9900789E64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5B8E2782B4CEB9900789E64 /* GoogleService-Info.plist */; };
+		B5F4C83D2B58B18500FEFF88 /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4C83C2B58B18500FEFF88 /* UserFollowTableViewCell.swift */; };
+		B5F4C83F2B58FED100FEFF88 /* NoNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4C83E2B58FED100FEFF88 /* NoNotificationsView.swift */; };
+		B5F4C8422B590A8B00FEFF88 /* NotificationFollowEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4C8412B590A8B00FEFF88 /* NotificationFollowEventTableViewCell.swift */; };
+		B5F4C8442B590ADA00FEFF88 /* NotificationLikeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4C8432B590ADA00FEFF88 /* NotificationLikeEventTableViewCell.swift */; };
 		B5F8B7AF2B56ADFA0000621B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8B7AE2B56ADFA0000621B /* Models.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +85,10 @@
 		B5ADE2342B4B8B960029838E /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		B5ADE2362B4B8BC40029838E /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		B5B8E2782B4CEB9900789E64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5F4C83C2B58B18500FEFF88 /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
+		B5F4C83E2B58FED100FEFF88 /* NoNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotificationsView.swift; sourceTree = "<group>"; };
+		B5F4C8412B590A8B00FEFF88 /* NotificationFollowEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFollowEventTableViewCell.swift; sourceTree = "<group>"; };
+		B5F4C8432B590ADA00FEFF88 /* NotificationLikeEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLikeEventTableViewCell.swift; sourceTree = "<group>"; };
 		B5F8B7AE2B56ADFA0000621B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F63520A6B20CFD2FD2E05CAC /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE61B83A9AAD8CAC2D2C3751 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,9 +132,11 @@
 		B574F0E82B52129F00FD281A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B5F4C8402B590A1B00FEFF88 /* Notifications */,
 				B574F0EB2B52191E00FD281A /* Home Feed */,
 				B574F0F22B54CFDB00FD281A /* FormTableViewCell.swift */,
 				B574F0F52B54FDC900FD281A /* PhotoCollectionViewCell.swift */,
+				B5F4C83C2B58B18500FEFF88 /* UserFollowTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -197,6 +207,7 @@
 				B574F0E82B52129F00FD281A /* Cells */,
 				B5ADE2092B4B834B0029838E /* Assets.xcassets */,
 				B5ADE2182B4B85400029838E /* Storyboards */,
+				B5F4C83E2B58FED100FEFF88 /* NoNotificationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +271,15 @@
 				B5ADE2262B4B89A10029838E /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B5F4C8402B590A1B00FEFF88 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				B5F4C8412B590A8B00FEFF88 /* NotificationFollowEventTableViewCell.swift */,
+				B5F4C8432B590ADA00FEFF88 /* NotificationLikeEventTableViewCell.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		BB0607F7EC568129037EF5FA /* Pods */ = {
@@ -393,9 +413,12 @@
 				B5ADE21C2B4B87740029838E /* CameraViewController.swift in Sources */,
 				B5ADE2052B4B83490029838E /* HomeViewController.swift in Sources */,
 				B5ADE2272B4B89A10029838E /* RegistrationViewController.swift in Sources */,
+				B5F4C83F2B58FED100FEFF88 /* NoNotificationsView.swift in Sources */,
 				B574F0ED2B5219D200FD281A /* IGFeedPostHeaderTableViewCell.swift in Sources */,
+				B5F4C8422B590A8B00FEFF88 /* NotificationFollowEventTableViewCell.swift in Sources */,
 				B5ADE2352B4B8B960029838E /* PostEditorViewController.swift in Sources */,
 				B574F0E32B4D15B300FD281A /* StorageManager.swift in Sources */,
+				B5F4C83D2B58B18500FEFF88 /* UserFollowTableViewCell.swift in Sources */,
 				B5F8B7AF2B56ADFA0000621B /* Models.swift in Sources */,
 				B574F0F32B54CFDB00FD281A /* FormTableViewCell.swift in Sources */,
 				B5ADE2292B4B8A140029838E /* PostViewController.swift in Sources */,
@@ -408,6 +431,7 @@
 				B5ADE2252B4B89680029838E /* LoginViewController.swift in Sources */,
 				B574F0E52B4D255100FD281A /* Extensions.swift in Sources */,
 				B574F0F12B521AC600FD281A /* IGFeedPostGeneralTableViewCell.swift in Sources */,
+				B5F4C8442B590ADA00FEFF88 /* NotificationLikeEventTableViewCell.swift in Sources */,
 				B5ADE2312B4B8AF90029838E /* SearchViewController.swift in Sources */,
 				B574F0F82B54FEDA00FD281A /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
 				B5ADE2202B4B87F10029838E /* ProfileViewController.swift in Sources */,

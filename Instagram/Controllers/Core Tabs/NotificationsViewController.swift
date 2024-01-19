@@ -8,7 +8,7 @@
 import UIKit
 enum UserNotificationType {
     case like(post: UserPost)
-    case follow
+    case follow(state: FollowState)
 }
 
 struct UserNotification {
@@ -36,9 +36,11 @@ class NotificationsViewController: UIViewController ,UITableViewDelegate,UITable
     
     
     private lazy var noNotificationsView = NoNotificationsView()
+    private var models = [UserNotification]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchNotifications()
         navigationItem.title = "通知"
         view.backgroundColor = .systemBackground
         view.addSubview(spinner)
@@ -55,6 +57,21 @@ class NotificationsViewController: UIViewController ,UITableViewDelegate,UITable
         spinner.center = view.center
     }
     
+    private func  fetchNotifications(){
+        for x in 0...100 {
+            let post = UserPost(identifier: "",
+                                postType: .photo,
+                                thumbnailImage: URL(string: "https://www.google.com/")!,
+                                postURL: URL(string: "https://www.google.com/")!,
+                                caption: nil, likeCount: [], comments: [], createdDate: Date(), taggedUsers: [])
+            
+            let model = UserNotification(type: x % 2 == 0 ? .like(post: post) : .follow(state: .not_following),
+                                         text: "Hello World",
+                                         user: User(username: "joe", bio: "", name: ("", ""), profilePhoto: URL(string: "https://www.google.com")!, birthDate: Date(), gender: .male, counts: UserCount(followers: 1, following: 1, posts: 1), joinDate: Date()))
+            models.append(model)
+        }
+    }
+    
     private func addNoNotificationsView () {
         tableView.isHidden = true
         view.addSubview(tableView)
@@ -63,13 +80,56 @@ class NotificationsViewController: UIViewController ,UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        return cell
+        let model =  models[indexPath.row]
+        switch model.type {
+        case .like(_):
+            //like cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: NotificationLikeEventTableViewCell.identifier, for: indexPath) as! NotificationLikeEventTableViewCell
+            cell.configure(with: model)
+            cell.delegate = self
+            return cell
+        case.follow:
+            //follow cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: NotificationFollowEventTableViewCell.identifier, for: indexPath) as! NotificationFollowEventTableViewCell
+            cell.configure(with: model)
+            cell.delegate = self
+            return cell
+        }
+        
+       
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
 
+}
+
+extension NotificationsViewController: NotificationLikeEventTableViewCellDelegate{
+    func didTapRelatedPostButton(model: UserNotification) {
+        print("ポストをタップした")
+        //ポストへ
+        switch model.type {
+        case .like(let post):
+            let vc = PostViewController(model: post)
+            vc.title = "ポスト"
+            
+        case .follow(_):
+            fatalError("Dev Issue: Should never get called" )
+        }
+    }
+}
+
+
+extension NotificationsViewController: NotificationFollowEventTableViewCellDelegate{
+    func didTapFollowUnFollowButton(model: UserNotification) {
+        print("ボタンを押した")
+        //データーベースにアップデート
+    }
+    
+   
 }
